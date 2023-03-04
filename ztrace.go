@@ -142,10 +142,13 @@ func New(protocol string, dest string, src string, maxPath int, maxTtl uint8, pp
 		WideMode:      wmode,
 		SendChan:      make(chan *SendMetric, 10),
 		RecvChan:      make(chan *RecvMetric, 10),
-		geo:           geoip.New(geocfg, asncfg),
+		geo:           nil,
 		PortOffset:    int32(portoffset),
 	}
 	result.VerifyCfg()
+	if geocfg != "" && asncfg != "" {
+		result.geo = geoip.New(geocfg, asncfg)
+	}
 	result.Lock = &sync.RWMutex{}
 
 	result.Metric = make([]map[string]*ServerRecord, int(maxTtl)+1)

@@ -59,9 +59,13 @@ func (t *TraceRoute) NewServerRecord(ipaddr string, ttl uint8, key string) *Serv
 	if strings.Contains(ipaddr, "tcp") {
 		addr := strings.Split(ipaddr, ":")
 		r.Addr = addr[1] + ":" + addr[2]
-		r.GeoLocation = t.geo.Lookup(addr[1])
+		if t.geo != nil {
+			r.GeoLocation = t.geo.Lookup(addr[1])
+		}
 	} else {
-		r.GeoLocation = t.geo.Lookup(ipaddr)
+		if t.geo != nil {
+			r.GeoLocation = t.geo.Lookup(ipaddr)
+		}
 	}
 
 	return r
