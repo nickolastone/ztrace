@@ -19,7 +19,7 @@ clean:
 	cp -r $(DATA_PATH) $(BINARY_PATH)
 
 deps:
-	$(GOGET) -u -v  github.com/zartbot/ztrace
+	$(GOGET) -u -v  github.com/nickolastone/ztrace
 
 linux_x86: $(info >> Starting build linux package...)
 	GOOS=linux GOARCH=amd64 $(GOBUILD) -ldflags="$(LDFLAGS)"  -o $(BINARY_PATH)/$(BINARY_NAME)_linux_x86 -v

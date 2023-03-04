@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/zartbot/ztrace"
+	"github.com/nickolastone/ztrace"
 )
 
 var cmd = struct {

@@ -10,10 +10,10 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/nickolastone/ztrace/geoip"
+	"github.com/nickolastone/ztrace/stats/describe"
+	"github.com/nickolastone/ztrace/stats/quantile"
 	"github.com/olekukonko/tablewriter"
-	"github.com/zartbot/ztrace/geoip"
-	"github.com/zartbot/ztrace/stats/describe"
-	"github.com/zartbot/ztrace/stats/quantile"
 )
 
 type ServerRecord struct {

@@ -1,4 +1,4 @@
-module github.com/zartbot/ztrace
+module github.com/nickolastone/ztrace
 
 go 1.16
 

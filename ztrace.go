@@ -7,9 +7,9 @@ import (
 	"sync/atomic"
 	"time"
 
+	"github.com/nickolastone/ztrace/geoip"
+	"github.com/nickolastone/ztrace/tsyncmap"
 	"github.com/sirupsen/logrus"
-	"github.com/zartbot/ztrace/geoip"
-	"github.com/zartbot/ztrace/tsyncmap"
 )
 
 type SendMetric struct {
